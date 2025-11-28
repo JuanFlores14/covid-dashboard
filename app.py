@@ -747,28 +747,52 @@ elif page == "The Solution":
 
     with col1:
         st.markdown(f"""
-        <div class="category-card category-early">
-            <div class="category-label" style="color: {COLORS['early']};">EARLY ADOPTERS</div>
-            <div class="category-value" style="font-family: 'IBM Plex Mono', monospace; font-size: 2.4rem; font-weight: 500; margin-bottom: 6px; color: #1a1a1a;">{early_count}</div>
-            <div class="category-period">Before February 2021</div>
+        <div style='padding: 28px; border-top: 4px solid {COLORS['early']};
+                    border: 1px solid #e0e0e0; background: #fff; text-align: center;'>
+            <div style='font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px;
+                        color: {COLORS['early']}; margin-bottom: 10px; font-weight: 600;'>
+                EARLY ADOPTERS
+            </div>
+            <div style='font-size: 2.8rem; font-weight: 600; color: #1a1a1a; margin: 12px 0;'>
+                {early_count}
+            </div>
+            <div style='font-size: 0.95rem; color: #666;'>
+                Before February 2021
+            </div>
         </div>
         """, unsafe_allow_html=True)
 
     with col2:
         st.markdown(f"""
-        <div class="category-card category-mid">
-            <div class="category-label" style="color: {COLORS['mid']};">MID ADOPTERS</div>
-            <div class="category-value" style="font-family: 'IBM Plex Mono', monospace; font-size: 2.4rem; font-weight: 500; margin-bottom: 6px; color: #1a1a1a;">{mid_count}</div>
-            <div class="category-period">February – May 2021</div>
+        <div style='padding: 28px; border-top: 4px solid {COLORS['mid']};
+                    border: 1px solid #e0e0e0; background: #fff; text-align: center;'>
+            <div style='font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px;
+                        color: {COLORS['mid']}; margin-bottom: 10px; font-weight: 600;'>
+                MID ADOPTERS
+            </div>
+            <div style='font-size: 2.8rem; font-weight: 600; color: #1a1a1a; margin: 12px 0;'>
+                {mid_count}
+            </div>
+            <div style='font-size: 0.95rem; color: #666;'>
+                February – May 2021
+            </div>
         </div>
         """, unsafe_allow_html=True)
 
     with col3:
         st.markdown(f"""
-        <div class="category-card category-late">
-            <div class="category-label" style="color: {COLORS['late']};">LATE ADOPTERS</div>
-            <div class="category-value" style="font-family: 'IBM Plex Mono', monospace; font-size: 2.4rem; font-weight: 500; margin-bottom: 6px; color: #1a1a1a;">{late_count}</div>
-            <div class="category-period">After May 2021</div>
+        <div style='padding: 28px; border-top: 4px solid {COLORS['late']};
+                    border: 1px solid #e0e0e0; background: #fff; text-align: center;'>
+            <div style='font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px;
+                        color: {COLORS['late']}; margin-bottom: 10px; font-weight: 600;'>
+                LATE ADOPTERS
+            </div>
+            <div style='font-size: 2.8rem; font-weight: 600; color: #1a1a1a; margin: 12px 0;'>
+                {late_count}
+            </div>
+            <div style='font-size: 0.95rem; color: #666;'>
+                After May 2021
+            </div>
         </div>
         """, unsafe_allow_html=True)
     
