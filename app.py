@@ -22,103 +22,91 @@ st.markdown("""
 
     /* Base styles */
     .stApp {
-        background-color: #FAFAF8 !important;
+        background-color: #FAFAF8;
     }
 
-    html, body, [class*="css"], .main, .block-container {
-        font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
-        color: #1a1a1a !important;
+    html, body, [class*="css"] {
+        font-family: 'IBM Plex Sans', -apple-system, sans-serif;
+        color: #1a1a1a;
     }
 
-    /* Force sidebar styling */
-    section[data-testid="stSidebar"] {
-        background-color: #fff !important;
-        border-right: 1px solid #e0e0e0 !important;
-    }
-
-    section[data-testid="stSidebar"] .stRadio > label {
-        font-family: 'IBM Plex Sans', sans-serif !important;
-        font-size: 0.9rem !important;
-        color: #1a1a1a !important;
-    }
-    
     /* Main header - editorial style */
     .main-header {
-        font-family: 'Source Serif 4', Georgia, serif !important;
-        font-size: 3rem !important;
-        font-weight: 700 !important;
-        color: #1a1a1a !important;
-        text-align: left !important;
-        padding: 0 0 10px 0 !important;
-        margin-bottom: 10px !important;
-        border-bottom: 3px solid #1a1a1a !important;
-        letter-spacing: -0.5px !important;
-        line-height: 1.15 !important;
+        font-family: 'Source Serif 4', Georgia, serif;
+        font-size: 3rem;
+        font-weight: 700;
+        color: #1a1a1a;
+        text-align: left;
+        padding: 0 0 10px 0;
+        margin-bottom: 10px;
+        border-bottom: 3px solid #1a1a1a;
+        letter-spacing: -0.5px;
+        line-height: 1.15;
     }
 
     /* Subheader */
     .sub-header {
-        font-family: 'Source Serif 4', Georgia, serif !important;
-        font-size: 1.75rem !important;
-        color: #1a1a1a !important;
-        font-weight: 600 !important;
-        margin-top: 48px !important;
-        margin-bottom: 20px !important;
-        letter-spacing: -0.3px !important;
+        font-family: 'Source Serif 4', Georgia, serif;
+        font-size: 1.75rem;
+        color: #1a1a1a;
+        font-weight: 600;
+        margin-top: 48px;
+        margin-bottom: 20px;
+        letter-spacing: -0.3px;
     }
 
     /* Byline/credit line */
     .byline {
-        font-family: 'IBM Plex Sans', sans-serif !important;
-        font-size: 0.95rem !important;
-        color: #666 !important;
-        text-transform: uppercase !important;
-        letter-spacing: 1px !important;
-        margin-bottom: 28px !important;
+        font-family: 'IBM Plex Sans', sans-serif;
+        font-size: 0.95rem;
+        color: #666;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 28px;
     }
 
     /* Lead paragraph */
     .lead-text {
-        font-family: 'Source Serif 4', Georgia, serif !important;
-        font-size: 1.4rem !important;
-        line-height: 1.75 !important;
-        color: #2a2a2a !important;
-        max-width: 720px !important;
-        margin-bottom: 36px !important;
+        font-family: 'Source Serif 4', Georgia, serif;
+        font-size: 1.4rem;
+        line-height: 1.75;
+        color: #2a2a2a;
+        max-width: 720px;
+        margin-bottom: 36px;
     }
-    
+
     /* Metric cards - minimal style */
     .metric-card {
-        background-color: #fff !important;
-        padding: 28px 24px !important;
-        border: 1px solid #e0e0e0 !important;
-        position: relative !important;
+        background-color: #fff;
+        padding: 28px 24px;
+        border: 1px solid #e0e0e0;
+        position: relative;
     }
 
     .metric-card::before {
-        content: '' !important;
-        position: absolute !important;
-        top: 0 !important;
-        left: 0 !important;
-        width: 100% !important;
-        height: 3px !important;
-        background-color: #1e3a5f !important;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background-color: #1e3a5f;
     }
 
     .metric-label {
-        font-family: 'IBM Plex Sans', sans-serif !important;
-        font-size: 0.85rem !important;
-        text-transform: uppercase !important;
-        letter-spacing: 1px !important;
-        color: #666 !important;
-        margin-bottom: 10px !important;
+        font-family: 'IBM Plex Sans', sans-serif;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #666;
+        margin-bottom: 10px;
     }
 
     .metric-value {
-        font-family: 'IBM Plex Mono', monospace !important;
-        font-size: 2.1rem !important;
-        font-weight: 500 !important;
-        color: #1a1a1a !important;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 2.1rem;
+        font-weight: 500;
+        color: #1a1a1a;
     }
     
     /* Insight box - editorial callout */
@@ -589,11 +577,11 @@ elif page == "The Crisis":
         bars = ax.barh(age_totals['Agegroup'], age_totals['Deaths'], color=colors)
         
         for i, (deaths, pct) in enumerate(zip(age_totals['Deaths'], age_totals['Percentage'])):
-            ax.text(deaths + age_totals['Deaths'].max() * 0.02, i, 
-                   f'{deaths:,.0f} ({pct}%)', 
-                   va='center', fontsize=11, fontfamily='IBM Plex Mono', color='#444')
+            ax.text(deaths + age_totals['Deaths'].max() * 0.02, i,
+                   f'{deaths:,.0f} ({pct}%)',
+                   va='center', fontsize=11, fontfamily='monospace', color='#444')
         
-        ax.set_xlabel('Total Deaths', fontsize=12, fontfamily='IBM Plex Sans', color='#555')
+        ax.set_xlabel('Total Deaths', fontsize=12, fontfamily='sans-serif', color='#555')
         ax.set_ylabel('')
         ax.spines['top'].set_visible(False)
         ax.spines['right'].set_visible(False)
@@ -757,58 +745,30 @@ elif page == "The Solution":
     mid_count = len(timeline_data[timeline_data['Category'] == 'Mid Adopters'])
     late_count = len(timeline_data[timeline_data['Category'] == 'Late Adopters'])
 
-    # Usar contenedores con estilo para cada categoría
     with col1:
-        st.container()
         st.markdown(f"""
-        <div style='background: #fff; padding: 20px; border-left: 4px solid {COLORS['early']};
-                    border-right: 1px solid #e0e0e0; border-top: 1px solid #e0e0e0;
-                    border-bottom: 1px solid #e0e0e0; margin-bottom: 10px;'>
-            <p style='color: {COLORS['early']}; font-size: 0.75rem; font-weight: 600;
-                      text-transform: uppercase; letter-spacing: 1px; margin: 0;'>Early Adopters</p>
-        </div>
-        """, unsafe_allow_html=True)
-        st.metric(label="Countries", value=early_count, label_visibility="collapsed")
-        st.markdown(f"""
-        <div style='background: #fff; padding: 10px 20px; border-left: 4px solid {COLORS['early']};
-                    border-right: 1px solid #e0e0e0; border-bottom: 1px solid #e0e0e0;'>
-            <p style='color: #666; font-size: 0.9rem; margin: 0;'>Before February 2021</p>
+        <div class="category-card category-early">
+            <div class="category-label" style="color: {COLORS['early']};">Early Adopters</div>
+            <div class="category-value">{early_count}</div>
+            <div class="category-period">Before February 2021</div>
         </div>
         """, unsafe_allow_html=True)
 
     with col2:
-        st.container()
         st.markdown(f"""
-        <div style='background: #fff; padding: 20px; border-left: 4px solid {COLORS['mid']};
-                    border-right: 1px solid #e0e0e0; border-top: 1px solid #e0e0e0;
-                    border-bottom: 1px solid #e0e0e0; margin-bottom: 10px;'>
-            <p style='color: {COLORS['mid']}; font-size: 0.75rem; font-weight: 600;
-                      text-transform: uppercase; letter-spacing: 1px; margin: 0;'>Mid Adopters</p>
-        </div>
-        """, unsafe_allow_html=True)
-        st.metric(label="Countries", value=mid_count, label_visibility="collapsed")
-        st.markdown(f"""
-        <div style='background: #fff; padding: 10px 20px; border-left: 4px solid {COLORS['mid']};
-                    border-right: 1px solid #e0e0e0; border-bottom: 1px solid #e0e0e0;'>
-            <p style='color: #666; font-size: 0.9rem; margin: 0;'>February – May 2021</p>
+        <div class="category-card category-mid">
+            <div class="category-label" style="color: {COLORS['mid']};">Mid Adopters</div>
+            <div class="category-value">{mid_count}</div>
+            <div class="category-period">February – May 2021</div>
         </div>
         """, unsafe_allow_html=True)
 
     with col3:
-        st.container()
         st.markdown(f"""
-        <div style='background: #fff; padding: 20px; border-left: 4px solid {COLORS['late']};
-                    border-right: 1px solid #e0e0e0; border-top: 1px solid #e0e0e0;
-                    border-bottom: 1px solid #e0e0e0; margin-bottom: 10px;'>
-            <p style='color: {COLORS['late']}; font-size: 0.75rem; font-weight: 600;
-                      text-transform: uppercase; letter-spacing: 1px; margin: 0;'>Late Adopters</p>
-        </div>
-        """, unsafe_allow_html=True)
-        st.metric(label="Countries", value=late_count, label_visibility="collapsed")
-        st.markdown(f"""
-        <div style='background: #fff; padding: 10px 20px; border-left: 4px solid {COLORS['late']};
-                    border-right: 1px solid #e0e0e0; border-bottom: 1px solid #e0e0e0;'>
-            <p style='color: #666; font-size: 0.9rem; margin: 0;'>After May 2021</p>
+        <div class="category-card category-late">
+            <div class="category-label" style="color: {COLORS['late']};">Late Adopters</div>
+            <div class="category-value">{late_count}</div>
+            <div class="category-period">After May 2021</div>
         </div>
         """, unsafe_allow_html=True)
     
@@ -1008,7 +968,7 @@ elif page == "The Evidence":
         ax1.set_xticks(x_pos)
         ax1.set_xticklabels(['Early', 'Mid', 'Late'], fontsize=12)
         ax1.set_ylabel('Average Deaths', fontsize=12, color='#555')
-        ax1.set_title('Mean Deaths', fontsize=14, fontweight='500', fontfamily='IBM Plex Sans', pad=14)
+        ax1.set_title('Mean Deaths', fontsize=14, fontweight='500', fontfamily='sans-serif', pad=14)
         ax1.spines['top'].set_visible(False)
         ax1.spines['right'].set_visible(False)
         ax1.spines['bottom'].set_color('#e0e0e0')
@@ -1019,15 +979,15 @@ elif page == "The Evidence":
         for bar in bars1:
             height = bar.get_height()
             ax1.text(bar.get_x() + bar.get_width()/2., height + 1000,
-                    f'{height:,.0f}', ha='center', va='bottom', 
-                    fontsize=11, fontfamily='IBM Plex Mono', color='#444')
+                    f'{height:,.0f}', ha='center', va='bottom',
+                    fontsize=11, fontfamily='monospace', color='#444')
         
         # Median deaths
         bars2 = ax2.bar(x_pos, category_stats['Median'], color=colors, width=0.6)
         ax2.set_xticks(x_pos)
         ax2.set_xticklabels(['Early', 'Mid', 'Late'], fontsize=12)
         ax2.set_ylabel('Median Deaths', fontsize=12, color='#555')
-        ax2.set_title('Median Deaths', fontsize=14, fontweight='500', fontfamily='IBM Plex Sans', pad=14)
+        ax2.set_title('Median Deaths', fontsize=14, fontweight='500', fontfamily='sans-serif', pad=14)
         ax2.spines['top'].set_visible(False)
         ax2.spines['right'].set_visible(False)
         ax2.spines['bottom'].set_color('#e0e0e0')
@@ -1039,7 +999,7 @@ elif page == "The Evidence":
             height = bar.get_height()
             ax2.text(bar.get_x() + bar.get_width()/2., height + 50,
                     f'{height:,.0f}', ha='center', va='bottom',
-                    fontsize=11, fontfamily='IBM Plex Mono', color='#444')
+                    fontsize=11, fontfamily='monospace', color='#444')
         
         fig.patch.set_facecolor('#fff')
         plt.tight_layout()
@@ -1094,7 +1054,7 @@ elif page == "The Evidence":
 
                 text = ax.text(j + 0.5, i + 0.5, f'{value:.0f}',
                              ha='center', va='center',
-                             fontfamily='IBM Plex Mono', fontsize=14,
+                             fontfamily='monospace', fontsize=14,
                              fontweight='600', color=text_color)
 
     ax.set_title('')
