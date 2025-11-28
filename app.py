@@ -19,94 +19,106 @@ st.set_page_config(
 st.markdown("""
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
-    
+
     /* Base styles */
     .stApp {
-        background-color: #FAFAF8;
+        background-color: #FAFAF8 !important;
     }
-    
-    html, body, [class*="css"] {
-        font-family: 'IBM Plex Sans', -apple-system, sans-serif;
-        color: #1a1a1a;
+
+    html, body, [class*="css"], .main, .block-container {
+        font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+        color: #1a1a1a !important;
+    }
+
+    /* Force sidebar styling */
+    section[data-testid="stSidebar"] {
+        background-color: #fff !important;
+        border-right: 1px solid #e0e0e0 !important;
+    }
+
+    section[data-testid="stSidebar"] .stRadio > label {
+        font-family: 'IBM Plex Sans', sans-serif !important;
+        font-size: 0.9rem !important;
+        color: #1a1a1a !important;
     }
     
     /* Main header - editorial style */
     .main-header {
-        font-family: 'Source Serif 4', Georgia, serif;
-        font-size: 3rem;
-        font-weight: 700;
-        color: #1a1a1a;
-        text-align: left;
-        padding: 0 0 10px 0;
-        margin-bottom: 10px;
-        border-bottom: 3px solid #1a1a1a;
-        letter-spacing: -0.5px;
-        line-height: 1.15;
+        font-family: 'Source Serif 4', Georgia, serif !important;
+        font-size: 3rem !important;
+        font-weight: 700 !important;
+        color: #1a1a1a !important;
+        text-align: left !important;
+        padding: 0 0 10px 0 !important;
+        margin-bottom: 10px !important;
+        border-bottom: 3px solid #1a1a1a !important;
+        letter-spacing: -0.5px !important;
+        line-height: 1.15 !important;
     }
-    
+
     /* Subheader */
     .sub-header {
-        font-family: 'Source Serif 4', Georgia, serif;
-        font-size: 1.75rem;
-        color: #1a1a1a;
-        font-weight: 600;
-        margin-top: 48px;
-        margin-bottom: 20px;
-        letter-spacing: -0.3px;
+        font-family: 'Source Serif 4', Georgia, serif !important;
+        font-size: 1.75rem !important;
+        color: #1a1a1a !important;
+        font-weight: 600 !important;
+        margin-top: 48px !important;
+        margin-bottom: 20px !important;
+        letter-spacing: -0.3px !important;
     }
-    
+
     /* Byline/credit line */
     .byline {
-        font-family: 'IBM Plex Sans', sans-serif;
-        font-size: 0.95rem;
-        color: #666;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        margin-bottom: 28px;
+        font-family: 'IBM Plex Sans', sans-serif !important;
+        font-size: 0.95rem !important;
+        color: #666 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 1px !important;
+        margin-bottom: 28px !important;
     }
-    
+
     /* Lead paragraph */
     .lead-text {
-        font-family: 'Source Serif 4', Georgia, serif;
-        font-size: 1.4rem;
-        line-height: 1.75;
-        color: #2a2a2a;
-        max-width: 720px;
-        margin-bottom: 36px;
+        font-family: 'Source Serif 4', Georgia, serif !important;
+        font-size: 1.4rem !important;
+        line-height: 1.75 !important;
+        color: #2a2a2a !important;
+        max-width: 720px !important;
+        margin-bottom: 36px !important;
     }
     
     /* Metric cards - minimal style */
     .metric-card {
-        background-color: #fff;
-        padding: 28px 24px;
-        border: 1px solid #e0e0e0;
-        position: relative;
+        background-color: #fff !important;
+        padding: 28px 24px !important;
+        border: 1px solid #e0e0e0 !important;
+        position: relative !important;
     }
-    
+
     .metric-card::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 3px;
-        background-color: #1e3a5f;
+        content: '' !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 3px !important;
+        background-color: #1e3a5f !important;
     }
-    
+
     .metric-label {
-        font-family: 'IBM Plex Sans', sans-serif;
-        font-size: 0.85rem;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        color: #666;
-        margin-bottom: 10px;
+        font-family: 'IBM Plex Sans', sans-serif !important;
+        font-size: 0.85rem !important;
+        text-transform: uppercase !important;
+        letter-spacing: 1px !important;
+        color: #666 !important;
+        margin-bottom: 10px !important;
     }
-    
+
     .metric-value {
-        font-family: 'IBM Plex Mono', monospace;
-        font-size: 2.1rem;
-        font-weight: 500;
-        color: #1a1a1a;
+        font-family: 'IBM Plex Mono', monospace !important;
+        font-size: 2.1rem !important;
+        font-weight: 500 !important;
+        color: #1a1a1a !important;
     }
     
     /* Insight box - editorial callout */
@@ -745,54 +757,58 @@ elif page == "The Solution":
     mid_count = len(timeline_data[timeline_data['Category'] == 'Mid Adopters'])
     late_count = len(timeline_data[timeline_data['Category'] == 'Late Adopters'])
 
+    # Usar contenedores con estilo para cada categoría
     with col1:
+        st.container()
         st.markdown(f"""
-        <div style='padding: 28px; border-top: 4px solid {COLORS['early']};
-                    border: 1px solid #e0e0e0; background: #fff; text-align: center;'>
-            <div style='font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px;
-                        color: {COLORS['early']}; margin-bottom: 10px; font-weight: 600;'>
-                EARLY ADOPTERS
-            </div>
-            <div style='font-size: 2.8rem; font-weight: 600; color: #1a1a1a; margin: 12px 0;'>
-                {early_count}
-            </div>
-            <div style='font-size: 0.95rem; color: #666;'>
-                Before February 2021
-            </div>
+        <div style='background: #fff; padding: 20px; border-left: 4px solid {COLORS['early']};
+                    border-right: 1px solid #e0e0e0; border-top: 1px solid #e0e0e0;
+                    border-bottom: 1px solid #e0e0e0; margin-bottom: 10px;'>
+            <p style='color: {COLORS['early']}; font-size: 0.75rem; font-weight: 600;
+                      text-transform: uppercase; letter-spacing: 1px; margin: 0;'>Early Adopters</p>
+        </div>
+        """, unsafe_allow_html=True)
+        st.metric(label="Countries", value=early_count, label_visibility="collapsed")
+        st.markdown(f"""
+        <div style='background: #fff; padding: 10px 20px; border-left: 4px solid {COLORS['early']};
+                    border-right: 1px solid #e0e0e0; border-bottom: 1px solid #e0e0e0;'>
+            <p style='color: #666; font-size: 0.9rem; margin: 0;'>Before February 2021</p>
         </div>
         """, unsafe_allow_html=True)
 
     with col2:
+        st.container()
         st.markdown(f"""
-        <div style='padding: 28px; border-top: 4px solid {COLORS['mid']};
-                    border: 1px solid #e0e0e0; background: #fff; text-align: center;'>
-            <div style='font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px;
-                        color: {COLORS['mid']}; margin-bottom: 10px; font-weight: 600;'>
-                MID ADOPTERS
-            </div>
-            <div style='font-size: 2.8rem; font-weight: 600; color: #1a1a1a; margin: 12px 0;'>
-                {mid_count}
-            </div>
-            <div style='font-size: 0.95rem; color: #666;'>
-                February – May 2021
-            </div>
+        <div style='background: #fff; padding: 20px; border-left: 4px solid {COLORS['mid']};
+                    border-right: 1px solid #e0e0e0; border-top: 1px solid #e0e0e0;
+                    border-bottom: 1px solid #e0e0e0; margin-bottom: 10px;'>
+            <p style='color: {COLORS['mid']}; font-size: 0.75rem; font-weight: 600;
+                      text-transform: uppercase; letter-spacing: 1px; margin: 0;'>Mid Adopters</p>
+        </div>
+        """, unsafe_allow_html=True)
+        st.metric(label="Countries", value=mid_count, label_visibility="collapsed")
+        st.markdown(f"""
+        <div style='background: #fff; padding: 10px 20px; border-left: 4px solid {COLORS['mid']};
+                    border-right: 1px solid #e0e0e0; border-bottom: 1px solid #e0e0e0;'>
+            <p style='color: #666; font-size: 0.9rem; margin: 0;'>February – May 2021</p>
         </div>
         """, unsafe_allow_html=True)
 
     with col3:
+        st.container()
         st.markdown(f"""
-        <div style='padding: 28px; border-top: 4px solid {COLORS['late']};
-                    border: 1px solid #e0e0e0; background: #fff; text-align: center;'>
-            <div style='font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px;
-                        color: {COLORS['late']}; margin-bottom: 10px; font-weight: 600;'>
-                LATE ADOPTERS
-            </div>
-            <div style='font-size: 2.8rem; font-weight: 600; color: #1a1a1a; margin: 12px 0;'>
-                {late_count}
-            </div>
-            <div style='font-size: 0.95rem; color: #666;'>
-                After May 2021
-            </div>
+        <div style='background: #fff; padding: 20px; border-left: 4px solid {COLORS['late']};
+                    border-right: 1px solid #e0e0e0; border-top: 1px solid #e0e0e0;
+                    border-bottom: 1px solid #e0e0e0; margin-bottom: 10px;'>
+            <p style='color: {COLORS['late']}; font-size: 0.75rem; font-weight: 600;
+                      text-transform: uppercase; letter-spacing: 1px; margin: 0;'>Late Adopters</p>
+        </div>
+        """, unsafe_allow_html=True)
+        st.metric(label="Countries", value=late_count, label_visibility="collapsed")
+        st.markdown(f"""
+        <div style='background: #fff; padding: 10px 20px; border-left: 4px solid {COLORS['late']};
+                    border-right: 1px solid #e0e0e0; border-bottom: 1px solid #e0e0e0;'>
+            <p style='color: #666; font-size: 0.9rem; margin: 0;'>After May 2021</p>
         </div>
         """, unsafe_allow_html=True)
     
