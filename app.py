@@ -738,36 +738,36 @@ elif page == "The Solution":
     
     # Category statistics
     st.markdown('<h2 class="sub-header">Adoption Categories</h2>', unsafe_allow_html=True)
-    
+
     col1, col2, col3 = st.columns(3)
-    
+
     early_count = len(timeline_data[timeline_data['Category'] == 'Early Adopters'])
     mid_count = len(timeline_data[timeline_data['Category'] == 'Mid Adopters'])
     late_count = len(timeline_data[timeline_data['Category'] == 'Late Adopters'])
-    
+
     with col1:
         st.markdown(f"""
         <div class="category-card category-early">
-            <div class="category-label" style="color: {COLORS['early']};">Early Adopters</div>
-            <div class="category-value">{early_count}</div>
+            <div class="category-label" style="color: {COLORS['early']};">EARLY ADOPTERS</div>
+            <div class="category-value" style="font-family: 'IBM Plex Mono', monospace; font-size: 2.4rem; font-weight: 500; margin-bottom: 6px; color: #1a1a1a;">{early_count}</div>
             <div class="category-period">Before February 2021</div>
         </div>
         """, unsafe_allow_html=True)
-    
+
     with col2:
         st.markdown(f"""
         <div class="category-card category-mid">
-            <div class="category-label" style="color: {COLORS['mid']};">Mid Adopters</div>
-            <div class="category-value">{mid_count}</div>
+            <div class="category-label" style="color: {COLORS['mid']};">MID ADOPTERS</div>
+            <div class="category-value" style="font-family: 'IBM Plex Mono', monospace; font-size: 2.4rem; font-weight: 500; margin-bottom: 6px; color: #1a1a1a;">{mid_count}</div>
             <div class="category-period">February – May 2021</div>
         </div>
         """, unsafe_allow_html=True)
-    
+
     with col3:
         st.markdown(f"""
         <div class="category-card category-late">
-            <div class="category-label" style="color: {COLORS['late']};">Late Adopters</div>
-            <div class="category-value">{late_count}</div>
+            <div class="category-label" style="color: {COLORS['late']};">LATE ADOPTERS</div>
+            <div class="category-value" style="font-family: 'IBM Plex Mono', monospace; font-size: 2.4rem; font-weight: 500; margin-bottom: 6px; color: #1a1a1a;">{late_count}</div>
             <div class="category-period">After May 2021</div>
         </div>
         """, unsafe_allow_html=True)
